@@ -12,7 +12,7 @@ int main()
         else{
             int MIN = INT_MAX;
             for (int i = 0; i < n-1; i++){
-                MIN = min(MIN,abs(a[i]-a[i+1]));
+                MIN = min(MIN,a[i+1]-a[i]);
             }
             cout << MIN << "\n";
         }
