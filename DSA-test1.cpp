@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
-//GitHub: nduong18
 
 int n, a[100], X[100], k;
 
