@@ -1,25 +1,26 @@
-#include <bits/stdc++.h>
-#define ll long long
+#include <iostream>
 using namespace std;
 
-int n, a[100], X[100], k;
+int n, k, a[100], X[100];
 
-void Try(int i, int sum, int start){
-    if (sum == k){
-        for (int k = 1; k < i; k++) cout << X[k] << ' ';
+void backtrack(int i, int sum, int start) {
+    if (sum == k) {
+        for (int j = 0; j < i; j++) cout << X[j] << ' ';
         cout << endl;
         return;
     }
     if (sum > k) return;
 
-    for (int j = start; j < n; j++){
+    for (int j = start; j < n; j++) {
         X[i] = a[j];
-        Try(i+1,sum + a[j], j);
+        backtrack(i + 1, sum + a[j], j);
     }
 }
 
-int main(){
+int main() {
     cin >> n >> k;
     for (int i = 0; i < n; i++) cin >> a[i];
-    Try(1,0,0);
+    sort(a, a + n);
+    backtrack(0, 0, 0);
+    return 0;
 }
